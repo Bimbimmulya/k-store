@@ -10,9 +10,9 @@
                     <th>Product Name</th>
                     <th>Price</th>
                     <th>Stock</th>
-                    <th>Desc</th>
+                    {{-- <th>Desc</th> --}}
                     <th>Category</th>
-                    <th>Image</th>
+                    {{-- <th>Image</th> --}}
                     <th>Action</th>
                 </tr>
             </thead>
@@ -23,12 +23,12 @@
                   <td>{{$krismon->product_name}}</td>
                   <td>{{"Rp. ".number_format($krismon->price)}}</td>
                   <td>{{$krismon->stock}}</td>
-                  <td>{{$krismon->desc}}</td>
+                  {{-- <td>{{$krismon->desc}}</td> --}}
                   <td>{{$krismon->category->name}}</td>
-                  <td width="30%">
-				  		<img src="{{ asset('img/'.$krismon->image) }}" height="%" width="50%" class="card-img-top" alt="" srcset=""></td> 
+                  {{-- <td width="30%">
+				  		<img src="{{ asset('img/'.$krismon->image) }}" height="%" width="50%" class="card-img-top" alt="" srcset=""></td>  --}}
                   <td>
-					<a href="/edit/{{$krismon->id}}" class="fa fa-edit">Edit</a> 
+					<a href="/edit/{{$krismon->id}}" class="btn btn-primary">Edit</a> 
 					<form action="/delete/{{$krismon->id}}" method="POST">
 					@csrf
                     @method("DELETE")
@@ -39,4 +39,5 @@
                 @endforeach
             </tbody>
         </table>
+{{$krismons->links()}}
 @endsection

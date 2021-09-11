@@ -57,7 +57,7 @@ class ProductController extends Controller
 
     public function viewProduct()
     {
-        $krismons = Krismon::all();
+        $krismons = Krismon::paginate(10);
         return view('admin.product', compact('krismons'));
     }
 

@@ -11,7 +11,7 @@ class ShopController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $products = Krismon::paginate(4);
+        $products = Krismon::paginate(6);
         return view('shop.index',compact('categories', 'products', 'id'));
     }
 

@@ -5,7 +5,7 @@
 <div class="row">
 <div class="col-md-12">
 <div class="panel panel-default">
-    <div class="panel-heading">Data Pembelian</div>
+    <div class="panel-heading">Pembelian Batal</div>
         <div class="panel-body">
             <div class="table-responsive">
                 <table class="table table-hover" id="dataTables-example">

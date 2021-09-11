@@ -9,6 +9,12 @@ use App\Krismon;
 
 class CartController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $carts = Cart::where('user_id', Auth::user()->id)->get();
@@ -40,5 +46,11 @@ class CartController extends Controller
         return response()->json([
             'success' => true
         ]);
+    }
+
+    public function remove($id)
+    {
+        Cart::destroy($id);
+        return back();
     }
 }

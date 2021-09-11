@@ -4,11 +4,11 @@
     </div>
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b>Laravel</b>Blog</a>
+        <a href="#"><b>Krismon</b>Shop</a>
       </div>
       <!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Aplikasi Laravel Blog</p>
+        <p class="login-box-msg">Administrator</p>
 
         <form method="POST" action="{{ route('login') }}">
                             @csrf

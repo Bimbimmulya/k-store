@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/admin', 'HomeController@index');
 
 Route::get('/create', 'ProductController@create');
 
@@ -60,3 +60,7 @@ Route::post('/cart-store', 'CartController@store');
 Route::patch('/cart/{id}', 'CartController@update');
 
 Route::post('/checkout', 'CheckoutController@store');
+
+Route::get('/payment', 'KonfirmasiController@index');
+
+Route::delete('/remove/{id}', 'CartController@remove');

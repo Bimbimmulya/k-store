@@ -14,24 +14,29 @@ class CheckoutController extends Controller
         $this->middleware('auth');
     }
 
+    // public function index()
+    // {
+    //     return view('shop.checkout');
+    // }
+
     public function store()
    {
-       $carts = Cart::where('user_id', Auth::user()->id);
+    $carts = Cart::where('user_id', Auth::user()->id);
 
-       $cartUser = $carts->get();
+    $cartUser = $carts->get();
 
-       $transaction = Transaction::create([
-           'user_id' => Auth::user()->id
-       ]);
+    $transaction = Transaction::create([
+        'user_id' => Auth::user()->id
+    ]);
 
-       foreach ($cartUser as $cart) {
-           $transaction->detail()->create([
-               'krismon_id' => $cart->krismon_id,
-               'qty' => $cart->qty
-           ]);
+    foreach ($cartUser as $cart) {
+        $transaction->detail()->create([
+            'krismon_id' => $cart->krismon_id,
+            'qty' => $cart->qty
+        ]);
 
-           $carts->Delete();
-           return redirect('/index');
+        $carts->Delete();
+        return redirect('/index');
        }
    } 
 }
